@@ -9,5 +9,6 @@ public class RandomLevel : MonoBehaviour
     public void Start()
     {
         Instantiate(rand[Random.Range(0, rand.Length)]);
+        TheGameUI.Instance.OpenStart();
     }
 }

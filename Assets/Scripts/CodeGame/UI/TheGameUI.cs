@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
 using Game58;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -24,12 +23,38 @@ public class TheGameUI : Singleton<TheGameUI>
 
     public TextMeshProUGUI levelTMP;
 
+    public Image tut;
+
     // Start is called before the first frame update
-    void Start()
+    public void OpenStart()
     {
         SetState(State.Drawing);
 
         levelTMP.SetText($"LEVEL {GameDataManager.Instance.playerData.level}");
+        tut.sprite = Level.Instance.imageTut;
+    }
+
+
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            var mouseRay = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,
+                float.PositiveInfinity);
+
+            if (mouseRay.collider != null && mouseRay.collider.gameObject.CompareTag("Car"))
+            {
+                if (checkCar())
+                {
+                    mouseRay.collider.gameObject.GetComponent<car>().Go();
+                }
+            }
+        }
+    }
+
+    private bool checkCar()
+    {
+        return Level.Instance.Check();
     }
 
     public void ShowLose()
@@ -85,11 +110,16 @@ public class TheGameUI : Singleton<TheGameUI>
 
     public void Check()
     {
-        IEnumerator CheckIE()
+        if (Level.Instance.CheckkAll())
         {
-            yield return new WaitForSeconds(5);
+            if (Level.Instance.CheckAnswer())
+            {
+                ShowWin();
+            }
+            else
+            {
+                ShowLose();
+            }
         }
-
-        StartCoroutine(CheckIE());
     }
 }
