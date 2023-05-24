@@ -41,8 +41,8 @@ public class car : MonoBehaviour
     {
         pos = transform.position;
         //todo: uncomment
-        //isGoing = true;
-        rigidbody2D.velocity = -transform.right * 20;
+        isGoing = true;
+        rigidbody2D.velocity = -transform.right * 7;
     }
 
     public void Stop()

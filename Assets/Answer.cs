@@ -15,7 +15,7 @@ public class Answer : MonoBehaviour
     public void SetColor(EnumColor enumColor)
     {
         //todo: Phai xoa
-        color = enumColor;
+        //color = enumColor;
         currentColor = enumColor;
         SetColor();
     }
@@ -57,7 +57,7 @@ public class Answer : MonoBehaviour
         if (col.gameObject.CompareTag("Car"))
         {
             //todo: uncomment
-            //vacham = true;
+            vacham = true;
             SetColor(col.gameObject.GetComponent<car>().color);
         }
     }
