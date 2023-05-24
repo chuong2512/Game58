@@ -5773,7 +5773,6 @@ MonoBehaviour:
   isGoing: 0
   rigidbody2D: {fileID: 7423672200171562335}
   color: 2
-  vector2: {x: 0, y: 1}
 --- !u!1 &6884530758173386474
 GameObject:
   m_ObjectHideFlags: 0
@@ -5871,7 +5870,6 @@ MonoBehaviour:
   isGoing: 0
   rigidbody2D: {fileID: 7423672200257694916}
   color: 4
-  vector2: {x: 0, y: 1}
 --- !u!1 &6884530758563309543
 GameObject:
   m_ObjectHideFlags: 0
@@ -5969,7 +5967,6 @@ MonoBehaviour:
   isGoing: 0
   rigidbody2D: {fileID: 7423672200672783817}
   color: 2
-  vector2: {x: 0, y: 1}
 --- !u!1 &6884530759293667992
 GameObject:
   m_ObjectHideFlags: 0
@@ -6067,7 +6064,6 @@ MonoBehaviour:
   isGoing: 0
   rigidbody2D: {fileID: 7423672201570844854}
   color: 1
-  vector2: {x: 0, y: 1}
 --- !u!1 &7063809597409595475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8934,8 +8930,8 @@ Transform:
   m_GameObject: {fileID: 7623560853808748760}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7165177892446085646}
   - {fileID: 7165177893938935579}
